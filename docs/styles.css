@@ -12,6 +12,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* --- T1: HEADER --- */
 header {
   background-color: gray;
@@ -28,7 +33,7 @@ header {
   text-align: center;
 }
 
-h1 {
+header h1 {
   /* from @Google_fonts : ubuntu-bold */
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
@@ -91,12 +96,12 @@ header img {
   margin-top: 30px;
 }
 
-section {
+#studies section {
   padding: 0 10px;
   padding-top: 20px;
 }
 
-h2 {
+#studies h2 {
   /* from @Google_fonts : ubuntu-bold */
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
@@ -165,6 +170,7 @@ nav {
   justify-content: space-between;
 }
 nav li {
+  font-family: monospace;
   text-align: center;
   width: 100%;
   padding: 2px 5px;
@@ -172,11 +178,11 @@ nav li {
 }
 
 .slidder {
-    display: flex;
-    overflow: scroll;
+  display: flex;
+  overflow: scroll;
 }
 
-.topic {
+#knowledge section {
   background-color: var(--color_tag);
   padding: 5%;
   min-width: 90%;
@@ -198,6 +204,11 @@ nav li {
   margin-bottom: 30px;
   overflow: scroll;
 }
+.list-desing h3 {
+  font-family: monospace;
+  font-size: 24px;
+  margin: 25px 0;
+}
 .list-desing li {
   /* from @Google_fonts : ubuntu-light */
   font-family: "Ubuntu", sans-serif;
@@ -208,11 +219,6 @@ nav li {
   font-size: 10px;
   margin-bottom: 5px;
   margin-left: 10px;
-}
-.list-desing h3 {
-  font-family: monospace;
-  font-size: 24px;
-  margin: 25px 0;
 }
 .list-desing h4 {
   font-family: monospace;
@@ -238,4 +244,85 @@ nav li {
   padding: 2px 5px;
   list-style: none;
   border-radius: 5px;
+}
+
+/* --- T3: LANGUAGES --- */
+#languages {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 40px;
+  padding-bottom: 30px;
+}
+
+#languages h1 {
+  /* from @Google_fonts : ubuntu-bold */
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  text-align: center;
+  font-size: 16vw;
+}
+
+.tri_box {
+  margin: auto;
+  background-color: gray;
+  width: 60%;
+  border-radius: 10px;
+}
+
+#languages h3 {
+  /* from @Google_fonts : ubuntu-bold */
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  font-size: 17px;
+  color: black;
+  margin: auto;
+  padding: 10px;
+  background-color: gray;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  width: 45%;
+}
+
+.tri_box img {
+  width: 105%;
+  border-radius: 10px;
+  transform: translateX(-2.5%);
+  box-shadow: var(--color_shadow) 0 0 30px;
+}
+
+.tri_box h2 {
+  /* from @Google_fonts : ubuntu-regular */
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  color: var(--color_text);
+  text-align: center;
+  font-size: 28px;
+  margin: 5px;
+}
+
+.tri_box a h6 {
+  /* from @Google_fonts : ubuntu-light */
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+  color: #eee9;
+  padding: 15px;
+  padding-top: 0;
+  margin: 0;
+  text-align: justify;
+  width: 90%;
+}
+.tri_box a h6 span {
+  font-size: inherit;
+  vertical-align: middle;
+  margin-left: 3px;
 }
