@@ -1,45 +1,83 @@
-// # --- make knowlege dinamic ---
-let skill_nav_unfilter = document.getElementsByClassName("skill_nav")[0].childNodes;
-let skill_nav = [];
+/*
+ * ==============================================================================
+ * FILE NAME : engine.js
+ * MADE BY : DirtyDragon-CCXV
+ * CREATION_DATE : 2025-11-28
+ * VERSION : JavaScript - ES6 (ES2015)
+ * ------------------------------------------------------------------------------
+ * DESCRIPTION: 
+ * Main file of functionalities for "LG-CV" github, this file add
+ * functionalities to touch scroll and add data to HTML elements.
+ * ------------------------------------------------------------------------------
+ * LICENSE : MIT
+ * GITHUB REPOSITORY : https://github.com/DirtyDragon-CCXV/LG-CV
+ * ==============================================================================
+ */
 
-for (let x = 0; x < skill_nav_unfilter.length; x++) { //filter <li> elements
-    const element = skill_nav_unfilter[x];
-    if (element.nodeType == 1) {
-        skill_nav.push(element);
-    }
-}
 
-const SCROLL = window.screen.width;
-const slidder = document.getElementsByClassName("slidder")[0];
+
+// # --- make knowlege scrolled with touch nav bar ---
+const SKILLL_NAV = document.getElementsByClassName("skill_nav")[0].children;
+const SCROLL_WIDTH = window.screen.width;
+const SLIDDER = document.getElementsByClassName("slidder")[0];
 
 function ClickToScroll(id) {
-    console.log(SCROLL * id);
-    slidder.scrollTo({
+    SLIDDER.scrollTo({
         top: 0,
-        left: SCROLL * id,
+        left: SCROLL_WIDTH * id,
         behavior: "smooth",
     });
 }
 
-for (let i = 0; i < skill_nav.length; i++) {
-    const elem = skill_nav[i];
+for (let i = 0; i < SKILLL_NAV.length; i++) {
+    const elem = SKILLL_NAV[i];
 
-    if (elem.nodeType != 3) {
-        console.log(elem);
-
-        elem.addEventListener("click", () => {
-            ClickToScroll(i);
-        });
-    };
+    elem.addEventListener("click", () => {
+        ClickToScroll(i);
+    }
+    );
 }
 
 // --- Add information to cards ---
-const request = new XMLHttpRequest();
+const request = new XMLHttpRequest(); //get data from JSON
 request.open("GET", "rsc/skills.json");
 request.responseType = "json";
-request.send()
+request.send();
 
 request.onload = function () {
-  const datos = request.response;
-  console.log("data status:",200) //debug only
+    const DATOS = request.response;
+    const KEYS_DATOS = Object.keys(DATOS);
+
+    let slidder_sons = SLIDDER.children;
+    let classes = ["topics", "works"]
+
+    for (let i = 0; i < slidder_sons.length; i++) { //loop for sections
+        const CHILD = slidder_sons[i];
+
+        for (let p = 0; p < classes.length; p++) { //loop for clases [topics|works]
+            const BOX_CLASS = classes[p];
+
+            // get div "list-desing"
+            let box = CHILD.getElementsByClassName(BOX_CLASS)[0];
+
+            // make exception for second card
+            if (BOX_CLASS != "works") {
+                //create the title h3 element
+                let h3 = document.createElement("h3");
+                h3.innerText = KEYS_DATOS[i];
+                box.appendChild(h3);
+            }
+
+            // add the sub data
+            for (let b = 0; b < DATOS[KEYS_DATOS[i]][p].length; b++) { //loop for create each <li>
+                const LI = DATOS[KEYS_DATOS[i]][p][b]; // DATOS [ array_with_keys[iterator_of_section] ] [iterator_topics/work] [iterator_to_get_data]
+
+                let element_li = document.createElement("li");
+                element_li.innerText = LI;
+
+                box.appendChild(element_li);
+            }
+        }
+
+    }
 };
