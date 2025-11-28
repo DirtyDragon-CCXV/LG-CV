@@ -1,0 +1,37 @@
+{
+    "Estudiante" : [
+        [
+            "Matematicas aplicadas",
+            "Calculo",
+            "Quimica electrónica"
+        ],
+        [
+            "Mediciones de baja tolerancia"
+        ]
+    ],
+    "Junior" : [
+        [
+            "Software",
+            "Hardware"
+        ],
+        [
+            "Instacion de SO con Linux",
+            "Desarrollo de calculadora basica (CLI y GUI)",
+            "Desarrollo de Portafolio Personal"
+        ]
+    ],
+    "Aprendiz" : [
+        [
+            "Masas y fermentaciones"
+        ],
+        [
+            "Pizza"
+        ]
+    ],
+    "Aficionado" : [
+        [
+            "Sociologia"
+        ],
+        []
+    ]
+}

@@ -180,7 +180,7 @@ nav li {
 
 .slidder {
   display: flex;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 #knowledge section {
@@ -201,7 +201,7 @@ nav li {
   padding: 8px;
   padding-top: 2px;
   width: 50%;
-  height: 250px;
+  height: 300px;
   margin-bottom: 30px;
   overflow: scroll;
 }
@@ -294,7 +294,7 @@ nav li {
   width: 105%;
   border-radius: 10px;
   transform: translateX(-2.5%);
-  box-shadow: var(--color_shadow) 0 0 30px;
+  box-shadow: var(--color_shadow) 0 0 40px;
 }
 
 .tri_box h2 {
@@ -408,4 +408,7 @@ footer h1 {
   font-family: monospace;
   text-align: center;
   font-weight: lighter;
+}
+.sources_text a {
+  text-decoration: underline;
 }
