@@ -7,8 +7,6 @@ LICENSE : MIT
 GITHUB REPOSITORY : https://github.com/DirtyDragon-CCXV/LG-CV
 */
 
-
-
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 svg {
@@ -19,7 +17,7 @@ svg {
 
 body {
   background-color: #111;
-  color: white;
+  color: #eee;
   margin: 0;
 }
 
@@ -30,14 +28,29 @@ a {
 
 /* --- T1: HEADER --- */
 header {
-  background-color: gray;
+  background: linear-gradient(145deg, #969696 0%, #bdbdbd 50%, #969696 100%);
+  background-size: 200% 200%;
+  animation: GradintLoop 10s infinite linear;
   border-radius: 20px;
   width: 95%;
   margin: 10px auto;
+  margin-bottom: 60px;
   justify-content: center;
 
   display: flex;
   flex-direction: column;
+}
+
+@keyframes GradintLoop {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 .box {
@@ -98,7 +111,30 @@ header img {
   justify-content: center;
   margin: 20px auto;
   border-radius: 20px;
+  box-shadow: #fffa 0 0 30px;
 }
+
+/* --- Dark Mode */
+#darkmode {
+  position: absolute;
+  top: 67%;
+  left: 33%;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  background-color: #669;
+  border-radius: 30px;
+  border: #336 solid 3px;
+}
+#darkmode span[hidden] {
+  display: none;
+}
+#darkmode h3 {
+  font-family: monospace;
+  font-weight: lighter;
+  margin: 2px 5px
+}
+
 
 /* --- T2: EDUCATION --- */
 #studies {
@@ -260,11 +296,9 @@ nav li {
 
 /* --- T4: LANGUAGES --- */
 #languages {
-  display: flex;
-  flex-direction: column;
   justify-items: center;
   gap: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 150px;
 }
 
 #languages h1 {
@@ -275,9 +309,16 @@ nav li {
 
   text-align: center;
   font-size: 16vw;
+  margin: 60px 0;
 }
 
 .tri_box {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.cuad_box {
   margin: auto;
   background-color: gray;
   width: 60%;
@@ -301,14 +342,14 @@ nav li {
   width: 45%;
 }
 
-.tri_box img {
+.cuad_box img {
   width: 105%;
   border-radius: 10px;
   transform: translateX(-2.5%);
   box-shadow: var(--color_shadow) 0 0 40px;
 }
 
-.tri_box h2 {
+.cuad_box h2 {
   /* from @Google_fonts : ubuntu-regular */
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
@@ -320,7 +361,7 @@ nav li {
   margin: 5px;
 }
 
-.tri_box a h6 {
+.cuad_box a h6 {
   /* from @Google_fonts : ubuntu-light */
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -333,47 +374,51 @@ nav li {
   text-align: justify;
   width: 90%;
 }
-.tri_box a h6 span {
+.cuad_box a h6 span {
   font-size: inherit;
   vertical-align: middle;
   margin-left: 3px;
 }
 
-
 /* --- T5: FOOTER --- */
 footer {
   background-color: #eee;
-  padding: 20px;
+  color: black;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 footer h1 {
-  color: black;
   font-family: serif;
 }
 
-.cuad_box {
+.quin_box {
   display: flex;
-  flex-direction: column  ;
-  gap: 20px;
-  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 40px;
 }
-.cuad_box a {
+
+.sex_box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sex_box a {
   width: fit-content;
   display: flex;
   gap: 5px;
   justify-items: center;
 }
-.cuad_box a li {
-  color: black;
+.sex_box a li {
   list-style: none;
   font-family: monospace;
   font-size: 16px;
   margin: auto;
 }
-.cuad_box a li::content {
+.sex_box a li::content {
   margin: auto;
   justify-content: center;
 }
@@ -382,6 +427,7 @@ footer h1 {
 }
 
 .linkedin_icon {
+  text-align: center;
   margin-bottom: 5px;
 }
 .linkedin_icon i {
@@ -390,7 +436,6 @@ footer h1 {
   font-weight: 700;
   font-style: normal;
 
-  color: black;
   font-size: var(--font_size);
 }
 .linkedin_icon b {
@@ -414,6 +459,7 @@ footer h1 {
 
 /* --- T5: SOURCES --- */
 .sources_text {
+  color: #aaa;
   padding-top: 10px;
   display: block;
   font-family: monospace;
@@ -422,4 +468,159 @@ footer h1 {
 }
 .sources_text a {
   text-decoration: underline;
+}
+
+/* --- WEBSITE ADAPTIBILITY --- */
+@media (min-device-width: 1000px) {
+  /* --- T1: HEADER --- */
+  header {
+    flex-direction: row;
+    gap: 2%;
+  }
+
+  header h1 {
+    font-size: 4.5em;
+    margin-top: 100px;
+    margin-left: 0;
+  }
+
+  .box {
+    margin-left: 40px;
+  }
+
+  .tags {
+    max-width: 90%;
+  }
+
+  .tags li h5 {
+    font-size: 22px;
+  }
+
+  header img {
+    width: 40%;
+    max-height: 80vh;
+    margin: 40px 0;
+    margin-right: 50px;
+    box-shadow: #aaa 0 0 60px;
+  }
+
+  /* --- Dark Mode */
+  #darkmode {
+    top: 85%;
+    left: 3%;
+    transition: background-color 200ms linear, border-color 200ms linear;
+  }#darkmode:hover {
+    background-color: #323c72;
+    border-color: #111;
+  }
+  #darkmode h3 {
+    font-size: 18px;
+  }
+
+  /* --- T2: EDUCATION --- */
+  #studies {
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 0;
+  }
+  
+  #studies section{
+    width: fit-content;
+    padding: 0;
+    margin: 40px 0;
+    margin-left: 10vw;
+  }
+
+  #studies h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .text_box {
+    width: 70vw;
+  }
+
+  .text_box h3 {
+    font-size: 1.5em;
+  }
+
+  .text_box h4 {
+    font-size: 1.2em;
+  }
+
+
+/* --- T3: KNOWLEDGE --- */
+  p {
+    font-size: 5vw;
+  }
+
+  nav li {
+    font-size: 2vw;
+  }
+
+  .list-desing {
+    padding: 20px;
+  }
+
+  .list-desing h3 {
+    font-size: 3vw;
+  }
+
+  .list-desing h4 {
+    font-size: 1.5vw;
+  }
+
+  .list-desing li {
+    font-size: 1.2vw;
+  }
+
+
+  /* --- T4: LANGUAGES --- */
+  #languages h1 {
+    font-size: 6vw;
+    width: 100vw;
+  }
+
+  .tri_box {
+    flex-direction: row;
+    margin: 0 30px;
+    gap: 40px;
+  }
+
+  #languages h3 {
+    width: 65%;
+    font-size: 1.5vw;
+  }
+
+  .cuad_box {
+    width: 90%;
+  }
+
+  .cuad_box h2 {
+    font-size: 3vw;
+  }
+
+  .cuad_box a h6 {
+    display: block;
+    font-size: 1vw;
+    width: 24.5vw;
+  }
+
+  /* --- T5: FOOTER --- */
+  .quin_box {
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+  }
+
+  .sex_box {
+    gap: 40px;
+  }
+
+  .sex_box a li {
+    font-size: 1.6vw;
+  }
+
 }
