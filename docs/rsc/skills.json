@@ -1,9 +1,11 @@
 {
     "Estudiante" : [
         [
-            "Matematicas aplicadas",
-            "Calculo",
-            "Quimica electrónica"
+            "Aritmetica",
+            "Algebra lineal",
+            "Calculo I",
+            "Geometria",
+            "Trigonometria"
         ],
         [
             "Mediciones de baja tolerancia"
@@ -11,27 +13,42 @@
     ],
     "Junior" : [
         [
-            "Software",
-            "Hardware"
+            "Python (Intermedio)",
+            "Html/Css",
+            "Javascript (Básico)",
+            "C/C++ (Básico)",
+            "GNU Linux (Básico)",
+            "Miembro de la comunidad Open-Source"
         ],
         [
-            "Instacion de SO con Linux",
-            "Desarrollo de calculadora basica (CLI y GUI)",
-            "Desarrollo de Portafolio Personal"
+            "Instación de SO con Linux",
+            "Desarrollo de calculadora básica (CLI y GUI)",
+            "Desarrollo de Portafolio Personal",
+            "Desarrollo de scripts automatizados",
+            "Extracción de informacion con Web-Scraping",
+            "Analisis de datos con Numpy y Matplotlib"
         ]
     ],
     "Aprendiz" : [
         [
-            "Masas y fermentaciones"
+            "Habilidades de Cuchillo (Básicas)",
+            "Mise en Place y Organización",
+            "Fundamentos de Recetas"
         ],
         [
-            "Pizza"
+            "Preparación de Pan Integral",
+            "Preparación de Galletas de Mantequilla",
+            "Preparación de Pizzas",
+            "Preparación de Bizcocho (Vainilla/Chocolate)"
         ]
     ],
-    "Aficionado" : [
+    "Introvertido" : [
         [
+            "Psicologia",
             "Sociologia",
-            "Psicologia"
+            "Etologia",
+            "Filosofia",
+            "Etica"
         ],  
         []
     ]
