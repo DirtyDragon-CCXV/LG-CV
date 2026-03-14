@@ -7,638 +7,356 @@ LICENSE : MIT
 GITHUB REPOSITORY : https://github.com/DirtyDragon-CCXV/LG-CV
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: #111;
-  color: #eee;
+  color: white;
   margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* --- T1: HEADER --- */
-header {
-  background: linear-gradient(145deg, #969696 0%, #bdbdbd 50%, #969696 100%);
-  background-size: 200% 200%;
-  animation: GradintLoop 10s infinite linear;
-  border-radius: 20px;
-  width: 95%;
-  margin: 10px auto;
-  margin-bottom: 60px;
-  justify-content: center;
-
   display: flex;
-  flex-direction: column;
+
+  font-family: "Ubuntu";
 }
 
-@keyframes GradintLoop {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-.box {
-  text-align: center;
-}
-
-header h1 {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-  font-size: 10vw;
-  text-align: left;
-  margin: 20px 0;
-  margin-left: 20px;
-}
-
-.tags {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 20px;
-}
-
-.tags li {
-  width: fit-content;
-
-  display: flex;
-  gap: 3px;
-}
-
-.tags li span,
-.tags li h5 {
-  background-color: #eee;
-  color: black;
-  border-radius: 10px;
-  padding: 5px;
-  align-content: center;
-}
-
-.tags li h5 {
-  /* from @Google_fonts : ubuntu-light */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-
-  margin: 0;
-  padding: 5px 10px;
-}
-
-header img {
-  width: 90%;
-  max-width: 400px;
-  max-height: 40vh;
-  object-fit: cover;
-  object-position: 0% 100%;
-  justify-content: center;
-  margin: 20px auto;
-  border-radius: 20px;
-  box-shadow: #fffa 0 0 30px;
-}
-
-/* --- Dark Mode */
-#darkmode {
-  position: absolute;
-  left: calc(50% - (148.95px/2));
-  padding: 5px 8px;
-  display: flex;
-  align-items: center;
-  background-color: #669;
-  border-radius: 30px;
-  border: #336 solid 3px;
-}
-#darkmode span[hidden] {
-  display: none;
-}
-#darkmode h3 {
-  font-family: monospace;
-  font-weight: lighter;
-  margin: 2px 5px;
-}
-
-/* --- T2: EDUCATION --- */
-#studies {
-  color: black;
-  background-color: #eee;
-  margin-top: 30px;
-}
-
-#studies section {
-  padding: 0 10px;
-  padding-top: 20px;
-}
-
-#studies h2 {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-  font-size: 5vw;
-  text-decoration: underline;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.sub_box {
-  height: max-content;
-  display: flex;
-}
-
-svg {
-  fill: black;
-  width: 8%;
-  margin: 10px;
-}
-
-.text_box {
+/* ### NAVBAR ### */
+.navbar_trigger {
+  background-color: #2226;
+  position: fixed;
   display: block;
-  margin-bottom: 20px;
-}
-
-.text_box h3 {
-  /* from @Google_fonts : ubuntu-regular */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-
-  font-size: 4.2vw;
-  margin: 5px 0;
-  width: max-content;
-}
-
-.text_box h4 {
-  /* from @Google_fonts : ubuntu-light */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-
-  font-size: 2.8vw;
-  margin: 5px 0;
-  width: 90%;
-  margin: 0;
-  margin-left: 10px;
-}
-
-/* --- T3: KNOWLEDGE --- */
-#knowledge {
-  background-color: #eee;
-  color: black;
-  padding: 20px 0;
-  padding-bottom: 0;
-}
-
-p {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-  text-align: center;
-  font-size: 11.5vw;
-  margin: 0;
-  border: black solid 5px;
+  height: 100%;
+  font-size:20px;
+  padding-top: 50vh;
+  transition: left 0.6s linear;
+  z-index: 2;
 }
 
 nav {
-  display: flex;
-  list-style-type: none;
-  justify-content: space-between;
+  display: block;
+  position: fixed;
+  left: -430px;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Doto";
+  font-weight: bold;
+  background-color: #222;
+  transition: left 0.6s linear;
+  z-index: 1;
 }
 nav li {
-  font-family: monospace;
-  text-align: center;
-  width: 100%;
-  padding: 2px 5px;
-  background-color: var(--color_tag);
-}
-
-.slidder {
-  display: flex;
-  overflow: hidden;
-}
-
-#knowledge section {
-  background-color: var(--color_tag);
-  padding: 5%;
-  min-width: 90%;
-}
-
-.content_box {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-}
-
-.list-desing {
-  background-color: #eee;
-  border-radius: 10px;
-  padding: 8px;
-  padding-top: 2px;
-  width: 50%;
-  height: 300px;
-  margin-bottom: 30px;
-  overflow: scroll;
-}
-.list-desing h3 {
-  font-family: monospace;
-  font-size: 5vw;
-  margin: 25px 0;
-}
-.list-desing li {
-  /* from @Google_fonts : ubuntu-light */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-
-  list-style: decimal;
-  font-size: 10px;
-  margin-bottom: 5px;
-  margin-left: 10px;
-}
-.list-desing h4 {
-  font-family: monospace;
-  text-align: center;
-  margin: 8px 0;
-}
-
-.resources {
-  justify-content: center;
-  margin: auto;
-  width: 90%;
-  height: 200px;
-}
-.resources a {
-  /* from @Google_fonts : ubuntu-regular */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-
-  font-size: 10px;
-  background-color: lightgray;
   width: fit-content;
-  padding: 2px 5px;
-  list-style: none;
-  border-radius: 5px;
+  font-size: 28px;
+  text-wrap: nowrap;
+  padding-top: 20px;
+  margin-left: 50px;
 }
 
-/* --- T4: LANGUAGES --- */
-#languages {
-  justify-items: center;
-  gap: 40px;
-  padding-bottom: 150px;
+nav li a {
+  color: white;
 }
-
-#languages h1 {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
+/* --- dark mode --- */
+#darkmode {
+  position: absolute;
+  top: 90%;
+  left: 4.5%;
+  display: inline-block;
+  width: 90%;
+  height: 60px;
   text-align: center;
-  font-size: 16vw;
-  margin: 60px 0;
+  background-color: gainsboro;
+  border-radius: 20px;
+}
+#darkmode span {
+  display: var(--visible);
+  color: red;
+  margin-top: 15px;
+  font-size: 30px;
 }
 
-.tri_box {
+#main {
+  overflow-x: hidden;
+}
+
+/* ### HEADER ### */
+header {
+  padding: 20px;
+}
+header h1 {
+  font-size: 70px;
+  text-align: left;
+  margin-left: 30px;
+}
+header h1::before {
+  display: block;
+  content: "CV: ";
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.tags {
+  list-style: decimal;
+  width: fit-content;
+  margin: auto;
+}
+.tags::before {
+  content: ".data > social_caracteristics:";
+  font-size: 8px;
+  font-weight: lighter;
+  font-family: monospace;
+  position: relative;
+  left: -55px;
+  opacity: 0.7;
+}
+.tags li span {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+.tags li h5 {
+  font-weight: 300;
+}
+
+/* ### STUDIES && JOB EXPERIENCE ### */
+#studies,
+#lab_exp {
+  background-color: black;
+  padding: 10px 20px;
+}
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+#studies article,
+#lab_exp article {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+article h3 {
+  font-size: 20px;
+  margin-top: 0;
+}
+.text_container {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.text_container .text_box h4 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+.text_container .text_box h4::before {
+  content: "> ";
+}
+.text_container .text_box h5 {
+  font-size: 12px;
+  margin: 0;
+  margin-left: 15px;
+  font-weight: lighter;
+}
+.text_container .text_box i {
+  font-size: 12px;
+  margin: 0;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+/* ### LENGUAJES ### */
+#languages {
+  background: linear-gradient(145deg,#060606 0%, #1f1f1f 100%);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+#languages h2 {
+  margin: 0;
+}
+#languages article {
+  background: #131;
+  border: #0605 solid 2px;  
+  border-radius: 30px;
+  padding: 10px 30px;
+}
+#languages pre {
+  text-decoration: none;
+  color: white;
+  font-size: 10px;
+}
+#languages .text_box {
+  margin-left: 20px;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: monospace;
+  font-size: 12px;
+}
+#languages .text_box p{
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+}
+#languages .text_box p::before {
+  content: "> ";
+}
+#languages .text_box b {
+  font-weight: lighter;
+  margin-top: 10px;
+  color: #ccc;
+}
+#languages .text_box span {
+  font-size: 16px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* ### PERSONALITY ### */
+#mind {
+  padding: 30px 20px;
+}
+.big-five h3 {
+  text-align: center;
+  font-size: 50px;
+}
+.big-five p {
+  text-align: justify;
+}
+.big-five p span {
+  font-size: inherit;
+  vertical-align: middle;
+}
+.big-five ul {
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 80px;
+  align-items: center;
+  padding: 20px 0;
 }
-
-.cuad_box {
-  margin: auto;
-  background-color: gray;
-  width: 60%;
-  border-radius: 10px;
-}
-
-#languages h3 {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-  font-size: 17px;
-  color: black;
-  margin: auto;
-  padding: 10px;
-  background-color: gray;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.big-five ul li {
+  display: flex;
+  height: fit-content;
+  gap: 40px;
+  align-items: center;
+} 
+.big-five ul li h4 {
+  width: 100px;
   text-align: center;
-  width: 45%;
+  text-decoration: underline;
 }
-
-.cuad_box img {
-  width: 105%;
-  border-radius: 10px;
-  transform: translateX(-2.5%);
-  box-shadow: var(--color_shadow) 0 0 40px;
-}
-
-.cuad_box h2 {
-  /* from @Google_fonts : ubuntu-regular */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-
-  color: var(--color_text);
+.big-five ul li h6 {
+  background-color: var(--graph_color);
+  width: 130px;
   text-align: center;
-  font-size: 28px;
-  margin: 5px;
-}
-
-.cuad_box a h6 {
-  /* from @Google_fonts : ubuntu-light */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-
-  color: #eee9;
-  font-size: 2vw;
-  padding: 15px;
-  padding-top: 0;
+  border-radius: 10px;
+  font-family: monospace;
+  font-size: 18px;
+  padding-top: calc(100px * var(--porcentage));
+  padding-bottom: 10px;
   margin: 0;
-  text-align: justify;
-  width: 90%;
 }
-.cuad_box a h6 span {
+.big-five a {
+  display: block;
+  text-align: center;
+  color: lightgray;
+}
+.big-five a span {
   font-size: inherit;
   vertical-align: middle;
-  margin-left: 3px;
+  margin-left: 4px;
 }
 
-/* --- T5: FOOTER --- */
-footer {
-  background-color: #eee;
-  color: black;
-  padding: 40px;
+
+/* ### CONTACT ### */
+#contact {
+  background-color: #0d000d;
+  padding-top: 20px;
+}
+#contact h2 {
+  margin-left: 20px;
+}
+.media_box {
+  padding: 30px 20px;
+}
+.media_box .social_box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.media_box .social_box a {
+  color: black;
+  font-weight: lighter;
 
-footer h1 {
-  font-family: serif;
+  background-color: #eee;
+  border-radius: 30px;
+  width: 265px;
+  
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  margin-bottom: 10px;
+}
+.media_box .social_box a img {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
 }
 
-.quin_box {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin-top: 40px;
-}
-
-.sex_box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.sex_box a {
-  width: fit-content;
-  display: flex;
-  gap: 5px;
-  justify-items: center;
-}
-.sex_box a li {
-  list-style: none;
-  font-family: monospace;
-  font-size: 16px;
-  margin: auto;
-}
-.sex_box a li::content {
-  margin: auto;
-  justify-content: center;
-}
-.icon {
-  width: 5vw;
-  height: 100%;
+.linkedin_box {
+  text-align: center;
+  margin: 30px 0;
 }
 
 .linkedin_icon {
-  text-align: center;
-  margin-bottom: 5px;
+  --linkedin_icon_size: 24px;
+  margin-bottom: 10px;
 }
-.linkedin_icon i {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-  font-size: var(--font_size);
-}
-.linkedin_icon b {
-  /* from @Google_fonts : ubuntu-bold */
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-  display: inline;
+.linkedin_icon i{
   color: white;
-  font-size: var(--font_size);
-  background-color: black;
-  padding: 0 4px;
-  border-radius: 5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--linkedin_icon_size);
 }
-
-.linkedin_qr {
+.linkedin_icon b{
+  color: black;
+  background-color: white;
+  padding: 2px 5px;
+  border-radius: 15%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--linkedin_icon_size);
+}
+#linkedin_qr {
+  width: 290px;
+  height: 290px;
   border-radius: 20px;
-  border: black solid 5px;
+  filter: brightness(92%);
 }
 
-/* --- T5: SOURCES --- */
-.sources_text, .upper {
-  color: #aaa;
-  padding-top: 10px;
-  display: block;
-  font-family: monospace;
+/*--- SOURCES --- */
+.sources_box {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #000;
   text-align: center;
+  color: #eee;
   font-weight: lighter;
 }
-.sources_text a {
-  text-decoration: underline;
+.sources_box a {
+  color: #eee;
+  font-weight: bold;
 }
 .upper {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px auto;
+  display: block;
+  margin-top: 40px;
 }
-
-/* --- WEBSITE ADAPTIBILITY --- */
-@media (min-device-width: 800px) and (max-device-width: 999px) {
-  .cuad_box {
-    width: 50%;
-  }
-
-  #languages h3 {
-    width: 35%;
-  }
-}
-@media (min-device-width: 1000px) {
-  /* --- T1: HEADER --- */
-  header {
-    flex-direction: row;
-    gap: 2%;
-  }
-
-  header h1 {
-    font-size: 4.5vw;
-    margin-top: 100px;
-    margin-left: 0;
-  }
-
-  .box {
-    margin-left: 40px;
-  }
-
-  .tags {
-    max-width: 90%;
-  }
-
-  .tags li h5 {
-    font-size: 22px;
-  }
-
-  header img {
-    width: 40%;
-    max-height: 80vh;
-    margin: 40px 0;
-    margin-right: 50px;
-    box-shadow: #aaa 0 0 60px;
-  }
-
-  /* --- Dark Mode */
-  #darkmode {
-    top: 85%;
-    left: 3%;
-    transition: background-color 200ms linear, border-color 200ms linear;
-  }
-  #darkmode h3 {
-    font-size: 18px;
-  }
-
-  /* --- T2: EDUCATION --- */
-  #studies {
-    justify-content: center;
-    gap: 20px;
-    padding: 50px 0;
-  }
-
-  #studies section {
-    width: fit-content;
-    padding: 0;
-    margin: 40px 0;
-    margin-left: 10vw;
-  }
-
-  #studies h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-
-  .text_box {
-    width: 70vw;
-  }
-
-  .text_box h3 {
-    font-size: 1.5vw;
-  }
-
-  .text_box h4 {
-    font-size: 1.2vw;
-  }
-
-  /* --- T3: KNOWLEDGE --- */
-  p {
-    font-size: 5vw;
-  }
-
-  nav li {
-    font-size: 2vw;
-  }
-
-  .list-desing {
-    padding: 20px;
-  }
-
-  .list-desing h3 {
-    font-size: 3vw;
-  }
-
-  .list-desing h4 {
-    font-size: 1.5vw;
-  }
-
-  .list-desing li {
-    font-size: 1.2vw;
-  }
-
-  /* --- T4: LANGUAGES --- */
-  #languages h1 {
-    font-size: 6vw;
-    width: 100vw;
-  }
-
-  .tri_box {
-    flex-direction: row;
-    margin: 0 30px;
-    gap: 40px;
-  }
-
-  #languages h3 {
-    width: 65%;
-    font-size: 1.5vw;
-  }
-
-  .cuad_box {
-    width: 90%;
-  }
-
-  .cuad_box h2 {
-    font-size: 3vw;
-  }
-
-  .cuad_box a h6 {
-    display: block;
-    font-size: 1vw;
-    width: 24.5vw;
-  }
-
-  /* --- T5: FOOTER --- */
-  .quin_box {
-    flex-direction: row;
-    width: 70%;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-  }
-
-  .sex_box {
-    gap: 40px;
-  }
-
-  .sex_box a li {
-    font-size: 1.6vw;
-  }
-
-  .icon {
-    width: 2vw;
-  }
+.upper span {
+  vertical-align: middle;
 }
